@@ -24,6 +24,8 @@ best possible channels for transmission of data.
 
 * interference detection
 
+* FHSS selection and determination
+
 ### Cryptography:
 
 * build a program/cli to input text data. Take the data and hash it with the recipient public key. write the data to message

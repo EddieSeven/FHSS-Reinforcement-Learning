@@ -16,7 +16,30 @@ a new frequency is found and transmission of message will resume. Reinforcement 
 best possible channels for transmission of data.
 
 
+## TODO:
+
+### Radiowork:
+
+* Finish radio top_block and packet handling
+
+* interference detection
+
+### Cryptography:
+
+* build a program/cli to input text data. Take the data and hash it with the recipient public key. write the data to message
+
+* take the data from recievedmessage and decrypt it with the private key, display text to console
+
+### Reinforcement Learning
+
+* take an array of values that represent interference levels, use a Q function to determine optimal or sub optimal interference levels
+
+* create test data sets
+
+
 This readme will be updated when more information is available to be dispersed.
+
+
 
 
 CREDIT:

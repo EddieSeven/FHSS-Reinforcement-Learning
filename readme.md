@@ -34,7 +34,7 @@ best possible channels for transmission of data.
 
 ### Reinforcement Learning:
 
-* take an array of values that represent interference levels, use a Q function to determine optimal or sub optimal interference levels
+* take an array of tuples that represent interference levels and their associated frequency, use a Q function to determine optimal or sub optimal interference levels
 
 * create test data sets
 
@@ -50,7 +50,7 @@ CREDIT:
 
 [Cryptography.io](https://cryptography.io/en/latest/)
 
-[An Introduction to FHSS Data Communication Techniques](http://macs.citadel.edu/chenm/sigma_xi/Presentation_Skinner.pdf)
+[An Introduction to FHSS Data Communication Techniques, Jason S. Skinner](http://macs.citadel.edu/chenm/sigma_xi/Presentation_Skinner.pdf)
 
 [Aaron Scher GNU radio companion collection](http://aaronscher.com/GNU_Radio_Companion_Collection/GNU_Radio_Companion.html)
 

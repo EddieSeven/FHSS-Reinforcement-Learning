@@ -32,7 +32,7 @@ best possible channels for transmission of data.
 
 * take the data from recievedmessage and decrypt it with the private key, display text to console
 
-### Reinforcement Learning
+### Reinforcement Learning:
 
 * take an array of values that represent interference levels, use a Q function to determine optimal or sub optimal interference levels
 

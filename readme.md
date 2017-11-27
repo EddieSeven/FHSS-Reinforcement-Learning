@@ -20,7 +20,7 @@ best possible channels for transmission of data.
 
 ### Radiowork:
 
-* Finish radio top_block and packet handling
+* integrate BladeRF with top_block/ create copy without throttle
 
 * interference detection
 
@@ -37,6 +37,8 @@ best possible channels for transmission of data.
 * take an array of tuples that represent interference levels and their associated frequency, use a Q function to determine optimal or sub optimal interference levels
 
 * create test data sets
+
+* Michael Look at me --- http://ieeexplore.ieee.org/document/7772036/
 
 
 This readme will be updated when more information is available to be dispersed.

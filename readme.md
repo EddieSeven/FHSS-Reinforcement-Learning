@@ -22,9 +22,16 @@ best possible channels for transmission of data.
 
 * integrate BladeRF with top_block/ create copy without throttle
 
-* interference detection
+* interference detection 
+    * use bladeRF to capture 10 second samples on 10(?) different frequencies
+        * set frequency rx 2400.00M
 
 * FHSS selection and determination
+
+   * frequency hop with a system call to the bladerf.sh script(3 args, 1 is frequency, 2nd is samplerate, 3rd is bandwidth). 
+  
+  
+   
 
 ### Cryptography:
 

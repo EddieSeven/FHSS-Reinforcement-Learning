@@ -22,7 +22,7 @@ best possible channels for transmission of data.
 
 * integrate BladeRF with top_block/ create copy without throttle
 
-* interference detection 
+* interference detection
     * use bladeRF to capture 10 second samples on 10(?) different frequencies
         * set frequency rx 2400.00M
 
@@ -30,7 +30,7 @@ best possible channels for transmission of data.
 
    * frequency hop with a system call to the bladerf.sh script(3 args, 1 is frequency, 2nd is samplerate, 3rd is bandwidth). 
   
-  
+* create test data from piping captured sample data into octave, then writing it to a text file
    
 
 ### Cryptography:
@@ -43,8 +43,6 @@ best possible channels for transmission of data.
 
 * take an array of tuples that represent interference levels and their associated frequency, use a Q function to determine optimal or sub optimal interference levels
 
-* create test data sets
-
 * Michael Look at me --- http://ieeexplore.ieee.org/document/7772036/
 
 
@@ -56,6 +54,8 @@ This readme will be updated when more information is available to be dispersed.
 CREDIT:
 
 [GNUradio](https://www.gnuradio.org)
+
+[GNU Octave](https://www.gnu.org/software/octave/)
 
 [Cryptography.io](https://cryptography.io/en/latest/)
 

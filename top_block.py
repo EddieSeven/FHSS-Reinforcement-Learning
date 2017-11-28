@@ -3,7 +3,7 @@
 ##################################################
 # GNU Radio Python Flow Graph
 # Title: Top Block
-# Generated: Fri Nov 24 21:26:59 2017
+# Generated: Sun Nov 26 21:42:32 2017
 ##################################################
 
 if __name__ == '__main__':
@@ -65,7 +65,7 @@ class top_block(grc_wxgui.top_block_gui):
         self.blocks_throttle_0 = blocks.throttle(gr.sizeof_char*1, samp_rate,True)
         self.blocks_packed_to_unpacked_xx_1 = blocks.packed_to_unpacked_bb(1, gr.GR_MSB_FIRST)
         self.blocks_packed_to_unpacked_xx_0 = blocks.packed_to_unpacked_bb(1, gr.GR_MSB_FIRST)
-        self.blocks_file_source_0 = blocks.file_source(gr.sizeof_char*1, '/Users/Leif/Documents/workspace/CS440/AI PROJECT/aiproject/message', True)
+        self.blocks_file_source_0 = blocks.file_source(gr.sizeof_char*1, '/Users/Leif/Documents/workspace/CS440/AI PROJECT/aiproject/message', False)
         self.blocks_file_sink_0 = blocks.file_sink(gr.sizeof_char*1, '/Users/Leif/Documents/workspace/CS440/AI PROJECT/aiproject/recievedmessage', False)
         self.blocks_file_sink_0.set_unbuffered(True)
         self.blks2_packet_encoder_0_0 = grc_blks2.packet_mod_b(grc_blks2.packet_encoder(

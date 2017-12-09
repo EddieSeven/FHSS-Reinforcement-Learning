@@ -1,20 +1,23 @@
+import random
 
 
 class ReinforcementLearning:
     def __init__(self):
         self.Q = {}
-        self.time = 0
-        self.channels = []
+        self.data = [[]]
 
     def update_Q(self, state_action, reinforcement):
         self.Q[state_action] = reinforcement
 
-    def update_state(self, new_channels):
-        self.time += 1
-        self.channels = new_channels
+    def get_channels(self, time):
+        return self.data[time]
 
-    def choose_next_hop(self):
-        pass
+    def next_hop(self, epsilon, channels):
+        chooser = random.random()
+        if chooser < epsilon:
+            return random.choice(channels)
+        else:
+            return None
 
     @staticmethod
     def state_action(time, channels, next_channel):
@@ -22,7 +25,7 @@ class ReinforcementLearning:
 
     def train(self, time):
         for round in time:
-            next_hop = self.choose_next_hop()
+            next_hop = self.next_hop()
             self.update_Q()
             self.update_state()
         pass
@@ -31,8 +34,6 @@ class ReinforcementLearning:
         pass
 
 
-a = {}
-a[4] = 'b'
-print(a)
-a[4] = 'c'
-print(a)
+a = [['c1', 'c2', 'c3'], ['c1', 'c2', 'c3']]
+b = a[1]
+print(b)

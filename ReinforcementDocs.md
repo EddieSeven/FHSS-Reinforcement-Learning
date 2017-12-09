@@ -13,6 +13,19 @@
 ## Goal
 * Final time t<sub>n</sub>
 
+## Sample Data and Pattern Generation
+* Our simulated data is created with a pattern of an environment. For a given channel C at a given time T, there will be two values in its pattern. A probability and an alpha. Then, when the data is being generated, a random number is computed and if it is lower than the probability for C, then alpha is *subtracted* from C's interference. 
+* The same pattern will be applied to any new data that is generated.
+
+| Time | Channel 1 | Channel 2 | . . . | Channel N
+| --- | --- | --- | --- | --- 
+| t1 | c1 | c2 | ... | cN 
+| t2 |
+| ... |
+| t3 |
+
+
+
 ## Algorithm (based off of CSU CS 440 [lecture notes](https://nbviewer.jupyter.org/url/www.cs.colostate.edu/~anderson/cs440/notebooks/14%20Introduction%20to%20Reinforcement%20Learning.ipynb))
 
 train(time)

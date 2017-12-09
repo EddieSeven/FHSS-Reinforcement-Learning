@@ -36,11 +36,11 @@ train(time)
 Q = initialize(Q)
 
 for t in time:
-    if goal()
-        update Qold with TD error (1 - Qold)
-        start over
-    else
-        select next hop (greedy or random)
-        update Qold with TD error (1 + Qnew - Qold)
-        shift current state and action to old ones.
-        apply action
+* if goal()
+   * update Qold with TD error (1 - Qold)
+      * start over
+    * else
+        * select next hop (greedy or random)
+        * update Qold with TD error (1 + Qnew - Qold)
+        * shift current state and action to old ones.
+        * apply action

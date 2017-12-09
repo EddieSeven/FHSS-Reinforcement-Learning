@@ -6,30 +6,34 @@ class ReinforcementLearning:
         self.Q = {}
         self.data = [[]]
 
-    def update_Q(self, state_action, reinforcement):
-        self.Q[state_action] = reinforcement
+    def update_Q(self, time, action, next_time, next_action, interference):
+        self.Q[(time, action)] = interference + self.Q[(next_time, next_action)]
 
     def get_channels(self, time):
         return self.data[time]
 
-    def next_hop(self, epsilon, channels, time):
+    def action(self, epsilon, time):
         alpha = random.random()
+        channels = self.get_channels(time)
+        isGreedy = True
 
         if alpha < epsilon:
-            return random.choice(channels)
+            return random.choice(channels), isGreedy
         else:
-            return self.get_Qmin(time)
+            isGreedy = False
+            return self.get_Qmin(time), False
 
     def train(self, epsilon, epsilon_decay_factor, duration):
 
         for time in range(duration):
             epsilon *= epsilon_decay_factor
-            channels = self.get_channels(time)
+            action = self.action(epsilon, time)
+            next_time = time + 1
 
-            next_hop = self.next_hop(epsilon, channels, time)
+            if next_time < duration:
+                next_action = self.action(epsilon, next_time)
+                self.update_Q(time, action, next_time, next_action)
 
-            self.update_Q()
-            self.update_state()
         pass
 
     def test(self):
@@ -51,6 +55,16 @@ class ReinforcementLearning:
 
 def to_tuple(time, channel, next_channel):
     return tuple(((time, channel), next_channel))
+
+
+q = {}
+data = [[]]
+
+for i in range (10000):
+    for j in range(10):
+        channel = 'c' + str(j + 1)
+        interference = random.random()
+    
 
 
 q = {(0, 'c1'): 0.56, (0, 'c2'): 0.3}

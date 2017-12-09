@@ -11,7 +11,7 @@
 * Channel indices in the above mentioned state sublist should be static. For example, channel C is the same channel regardless if it is time 2 or time 3,000.
 
 ## Goal
-* Final time t<sub>n</sub>
+* Minimize interference at any given time
 
 ## Sample Data and Pattern Generation
 * Our simulated data is created with a pattern of an environment. For a given channel C at a given time T, there will be three values in its pattern. 

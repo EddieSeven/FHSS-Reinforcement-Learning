@@ -2,6 +2,7 @@
 ## State
 * *List* of (time t<sub>i</sub>, *list* of channels c<sub>1</sub>, (c<sub>2</sub>, ..., c<sub>n</sub>))
 #### Example
+* [[c1, c2, ..., cn], [c1, c2, ..., cn], ..., [c1, c2, ..., cn]]
 
 ## Time
 * Discrete, arbitrary unit that increases by increments of 1.

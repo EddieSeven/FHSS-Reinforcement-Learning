@@ -14,13 +14,17 @@
 * Final time t<sub>n</sub>
 
 ## Sample Data and Pattern Generation
-* Our simulated data is created with a pattern of an environment. For a given channel C at a given time T, there will be two values in its pattern. A probability and an alpha. Then, when the data is being generated, a random number is computed and if it is lower than the probability for C, then alpha is *subtracted* from C's interference. 
+* Our simulated data is created with a pattern of an environment. For a given channel C at a given time T, there will be three values in its pattern. 
+    * Alpha
+    * Weight
+    * Transmission Length
+* When the data is being generated, a random number is computed and if it is lower than the alpha, then weight is *subtracted* from C's interference. Then a random transmission length is generated, and the interference is propagated into the future for the transmission length.
 * The same pattern will be applied to any new data that is generated.
 
 | Time | Channel 1 | Channel 2 | . . . | Channel N
 | --- | --- | --- | --- | --- 
 | t1 | c1 | c2 | ... | cN 
-| t2 |
+| t2 | 
 | ... |
 | t3 |
 

@@ -33,15 +33,9 @@
 
 ## Algorithm (based off of CSU CS 440 [lecture notes](https://nbviewer.jupyter.org/url/www.cs.colostate.edu/~anderson/cs440/notebooks/14%20Introduction%20to%20Reinforcement%20Learning.ipynb))
 
-train(time)
-Q = initialize(Q)
-
-for t in time:
-* if goal()
-   * update Qold with TD error (1 - Qold)
-      * start over
-    * else
-        * select next hop (greedy or random)
-        * update Qold with TD error (1 + Qnew - Qold)
-        * shift current state and action to old ones.
-        * apply action
+for round in time:
+* If round < 0
+   * If Q table for [round, [moves]] is empty, initialize Q table with reinforcements of 100
+   * Generate either random hop or greedy hop (pick highest reinforcement) depending on epsilon
+   * If hop is not the optimal hop (its interference is *not* the lowest), decay its reinforcement by the learning rate
+   

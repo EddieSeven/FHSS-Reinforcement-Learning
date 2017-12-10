@@ -15,13 +15,11 @@ class ReinforcementLearning:
     def action(self, epsilon, time):
         alpha = random.random()
         channels = self.get_channels(time)
-        isGreedy = True
 
         if alpha < epsilon:
-            return random.choice(channels), isGreedy
+            return random.choice(channels)
         else:
-            isGreedy = False
-            return self.get_Qmin(time), False
+            return self.get_Qmin(time)
 
     def train(self, epsilon, epsilon_decay_factor, duration):
 
@@ -64,7 +62,7 @@ for i in range (10000):
     for j in range(10):
         channel = 'c' + str(j + 1)
         interference = random.random()
-    
+
 
 
 q = {(0, 'c1'): 0.56, (0, 'c2'): 0.3}

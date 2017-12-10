@@ -4,3 +4,8 @@ class Channel:
         self.alpha = alpha
         self.x = x
         self.length = length
+        self.interference = 0
+        self.name = 'ch'
+
+    def __repr__(self):
+        return self.name

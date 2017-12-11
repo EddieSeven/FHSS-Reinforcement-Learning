@@ -51,6 +51,12 @@ class Channel:
                 print(item[i].x, end=',')
                 print(item[i].alpha, end='')
                 print(')', end ='')
+                
+                
+                
+    
+    def __repr__(self):
+        return self.name
 
 
 # Chan = Channel()
@@ -58,6 +64,3 @@ class Channel:
 # Chan.fillChannelTemplate(transmissionMatrix)
 # Chan.printData(transmissionMatrix)
 
-
-def __repr__(self):
-    return self.name

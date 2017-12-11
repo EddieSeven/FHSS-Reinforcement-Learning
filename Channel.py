@@ -38,10 +38,8 @@ class Channel:
                 transmissionMatrix[time][channel].isEmpty = False
                 length -= 1
 
-
-
-
-
+    def __repr__(self):
+        return self.name
 
     def printData(self,transmissionMatrix):
         for item in transmissionMatrix:
@@ -59,5 +57,3 @@ class Channel:
 # Chan.printData(transmissionMatrix)
 
 
-def __repr__(self):
-    return self.name

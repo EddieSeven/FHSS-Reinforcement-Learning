@@ -49,11 +49,15 @@ class Channel:
                 print(item[i].x, end=',')
                 print(item[i].alpha, end='')
                 print(')', end ='')
+                
+                
+                
+    
+    def __repr__(self):
+        return self.name
 
 
 # Chan = Channel()
 # transmissionMatrix = [[Channel() for y in range(10)] for x in range(10000)]
 # Chan.fillChannelTemplate(transmissionMatrix)
 # Chan.printData(transmissionMatrix)
-
-

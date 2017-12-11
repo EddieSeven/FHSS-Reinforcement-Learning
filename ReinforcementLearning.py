@@ -21,14 +21,14 @@ class ReinforcementLearning:
         next_channels = self.get_channels(time + 1)
 
         if alpha < epsilon:
-            return random.choice(next_channels)
+            next_hop = random.choice(next_channels)
+            return next_channels.index(next_hop)
         else:
             return self.get_Qmax(time)
 
     def train(self, epsilon, epsilon_decay_factor, duration, iterations, learning_rate):
         for _ in range(iterations):
             epsilon *= epsilon_decay_factor
-            print(epsilon)
 
             for time in range(duration):
                 next_time = time + 1
@@ -46,22 +46,23 @@ class ReinforcementLearning:
         next_channels = self.get_channels(time + 1)
 
         for next_channel in next_channels:
-            if self.Q.get((time, next_channel), -1) == -1:
-                self.Q[(time, next_channel)] = 100.0
+            index = next_channels.index(next_channel)
+            if self.Q.get((time, index), -1) == -1:
+                self.Q[(time, index)] = 100.0
 
     def get_Qmax(self, time):  # todo handle end of q table border case
         next_channels = self.get_channels(time + 1)
         highest_reinforcement = 0
-        optimal_channel = next_channels[0]
+        optimal_channel = 0
 
         for next_channel in next_channels:
-            reinforcement = self.Q.get((time, next_channel))
+            index = next_channels.index(next_channel)
+            reinforcement = self.Q.get((time, index))
             if reinforcement > highest_reinforcement:
-                optimal_channel = next_channel
+                optimal_channel = index
                 highest_reinforcement = reinforcement
 
         return optimal_channel
-
 
 data = []
 

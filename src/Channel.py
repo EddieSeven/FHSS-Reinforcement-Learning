@@ -21,7 +21,7 @@ class Channel:
         return alpha, x, length, interference, randDoub
 
     def fillChannelTemplate(self,transmissionMatrix,channelLength,tranLength):
-
+        transmissionMatrix = [[self.Channel() for y in range(channelLength)] for x in range(tranLength)]
         length = 0
 
         for channel in range(channelLength):
@@ -37,6 +37,7 @@ class Channel:
                 transmissionMatrix[time][channel].x = x
                 transmissionMatrix[time][channel].isEmpty = False
                 length -= 1
+        return transmissionMatrix
 
     def __repr__(self):
         return self.name

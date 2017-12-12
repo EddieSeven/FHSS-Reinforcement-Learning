@@ -86,18 +86,3 @@ def is_optimal(move, channels):
         return True
     else:
         return False
-
-
-Chan = Channel()
-time = 10000
-transmissionMatrix = [[Channel() for y in range(10)] for x in range(time)]
-Chan.fillChannelTemplate(transmissionMatrix)
-a = ReinforcementLearning()
-a.data = transmissionMatrix
-a.train(0.999, 0.999, 10000, 0.99)
-
-Chan.fillChannelTemplate(transmissionMatrix)
-
-performance = a.test(transmissionMatrix)
-
-print(performance * 100)

@@ -21,7 +21,7 @@ class Channel:
         return alpha, x, length, interference, randDoub
 
     def fillChannelTemplate(self,channelLength,tranLength):
-        transmissionMatrix = [[Channel for y in range(channelLength)] for x in range(tranLength)]
+        transmissionMatrix = [[Channel() for y in range(channelLength)] for x in range(tranLength)]
         length = 0
 
         for channel in range(channelLength):

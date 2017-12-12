@@ -1,5 +1,5 @@
 from src.ReinforcementLearning import *
-from src.Channel import Channel
+from src.Channel import *
 
 
 def mean(collection):
@@ -11,20 +11,19 @@ def mean(collection):
 
 
 def run_experiment(transmission_length, channel_length, epsilon, epsilon_decay_rate, training_iterations, learning_rate, train_runs, test_runs):
-    channel = Channel()
-    channel.createChannelData()
     algorithim = ReinforcementLearning()
     performances = []
+    template = Channel()
 
     for _ in range(train_runs):
-        training_matrix = channel.fillChannelTemplate(channel_length, transmission_length)
+        training_matrix = template.fillChannelTemplate(channel_length, transmission_length)
         algorithim.data = training_matrix
         algorithim.train(epsilon, epsilon_decay_rate, training_iterations, learning_rate)
 
     print("Done Training")
 
     for _ in range(test_runs):
-        test_matrix = channel.fillChannelTemplate(channel_length, transmission_length)
+        test_matrix = template.fillChannelTemplate(channel_length, transmission_length)
         algorithim.data = test_matrix
         performance = algorithim.test(test_matrix)
         performances.append(performance)

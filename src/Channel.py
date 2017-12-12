@@ -72,9 +72,11 @@ def create_template(channel_length, transmission_length):
                 first_channel = current_channel
                 create_pattern(first_channel)
                 length = first_channel.length
+                first_channel.interference = get_interference(first_channel)
 
             current_channel.alpha = first_channel.alpha
             current_channel.x = first_channel.x
+            current_channel.interference = first_channel.interference
 
             current_channel.name = "t" + str(time) + "c" + str(channel)
             length -= 1
@@ -91,16 +93,7 @@ def fill_template(channel_length, transmission_length, template):
 
     for channel in range(channel_length):
         for time in range(transmission_length):
-            if length is 0:
-                first_channel = filled_template[time][channel]
-                interference = get_interference(first_channel)
-                first_channel.interference = interference
-                length = first_channel.length
-            else:
-                filled_template[time][channel].interference = interference_noise(interference)
-
-            length -= 1
-        length = 0
+            filled_template[time][channel].interference = interference_noise(template[time][channel].interference)
 
     return filled_template
 

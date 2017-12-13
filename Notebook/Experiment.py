@@ -1,5 +1,5 @@
-from src.ReinforcementLearning import *
-from src.Channel import *
+from ReinforcementLearning import *
+from Channel import *
 
 
 def mean(collection):

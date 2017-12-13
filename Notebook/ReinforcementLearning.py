@@ -1,5 +1,5 @@
 import random
-from src.Channel import Channel
+from Channel import Channel
 
 
 class ReinforcementLearning:
